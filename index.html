@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & Outfit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="mood-default">
+    <header class="app-header">
+        <button id="menu-btn" aria-label="Menu">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="1"></circle>
+                <circle cx="12" cy="5" r="1"></circle>
+                <circle cx="12" cy="19" r="1"></circle>
+            </svg>
+        </button>
+        <div id="settings-menu" class="hidden">
+            <p>Weather data by <a href="https://open-meteo.com/" target="_blank">Open-Meteo</a></p>
+        </div>
+    </header>
+
+    <main id="app-container">
+        <!-- Search View -->
+        <section id="search-view" class="view active">
+            <h1 class="title">Where are you?</h1>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+                <button id="search-btn">Search</button>
+            </div>
+            <div id="search-loading" class="hidden">Searching...</div>
+            <ul id="results-list"></ul>
+        </section>
+
+        <!-- Weather View -->
+        <section id="weather-view" class="view hidden">
+            <button id="back-btn" class="icon-btn">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back
+            </button>
+            <div class="weather-content">
+                <h2 id="location-name">City Name</h2>
+                <div class="temp-display">
+                    <span id="temperature">--</span>°C
+                </div>
+                <div id="weather-description" class="weather-desc">Weather Condition</div>
+                <div class="outfit-card">
+                    <h3>Outfit Suggestion</h3>
+                    <p id="outfit-text">--</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
